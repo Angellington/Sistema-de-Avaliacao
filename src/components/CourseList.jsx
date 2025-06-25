@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import CourseItem from './CourseItem';
-import { Box, Rating, Typography } from '@mui/material';
+import { Box, Input, Rating, Typography } from '@mui/material';
 
 const CourseList = () => {
     const courses = [
@@ -26,6 +26,29 @@ const CourseList = () => {
         return (sum / value.length).toFixed(1);
     }
 
+    const [text, setText] = useState('');
+
+    const [number, setNumberState] = useState({value: 0, type: ''});
+
+    const setNumber = (value, type) => {
+        setNumberState({ value, type });
+    }
+
+    const handleTextChange = (e) => {
+        setText((e.target.value).length)
+    }
+
+    const handleNumberChange = (e) => {
+        const value = parseInt(e.target.value, 10);
+        if (!isNaN(value)) {
+            if(value % 2 === 0) {
+            setNumber(value, 'par');
+            } else {
+                setNumber(value, 'ímpar');
+            }
+        }
+    }
+
     return (
         <Box sx={{ padding: 2, textAlign: 'center', boxShadow: 3, borderRadius: 2 }}>
             <Typography variant="h4" component="h4" gutterBottom>
@@ -49,6 +72,11 @@ const CourseList = () => {
                 <Typography variant="body2" color="textSecondary">
                     Média: {getAverage()}
                 </Typography>
+                <Input placeholder='Digite aqui' onChange={handleTextChange} ></Input>
+                <Typography>O texto é: {text}</Typography>
+
+                <Input type='number' placeholder='Digite um número' onChange={handleNumberChange} ></Input>
+                <Typography>O número é: {number.value} {number.type}</Typography>
             </Box>
         </Box>
     )
