@@ -1,6 +1,10 @@
 import './App.css'
 import { Box, Typography } from '@mui/material'
 import CourseList from './components/CourseList'
+import OnChange from './components/OnChange'
+import StartingWithHook from './components/StartingWithHook'
+import InputCPF from './components/InputCPF'
+import Gender from './components/Gender'
 
 
 function App() {
@@ -16,7 +20,13 @@ function App() {
         </Typography>
       </Box>
 
-      <CourseList />
+      {/* <CourseList /> */}
+      {/* <OnChange /> */}
+
+      {/* <StartingWithHook /> */}
+      {/* <InputCPF/> */}
+      <Gender />
+
 
     </>
   )

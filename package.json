@@ -14,7 +14,9 @@
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^7.1.2",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.58.1",
+    "react-input-mask": "^3.0.0-alpha.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
